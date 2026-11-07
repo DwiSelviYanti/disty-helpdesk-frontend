@@ -1,0 +1,6 @@
+function BarisAduan({ t, no }) {
+  return /* @__PURE__ */ React.createElement("tr", { className: "row", onClick: () => detail(t.id) }, /* @__PURE__ */ React.createElement("td", null, no), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement("b", null, t.title)), /* @__PURE__ */ React.createElement("td", null, t.mod), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement("span", { className: "pill " + t.st }, t.st)), /* @__PURE__ */ React.createElement("td", { style: { whiteSpace: "nowrap", color: "var(--mut)" } }, t.tgl), /* @__PURE__ */ React.createElement("td", { dangerouslySetInnerHTML: { __html: ic("arrow", 14) } }));
+}
+function TabelAduan({ rows }) {
+  return /* @__PURE__ */ React.createElement("table", null, /* @__PURE__ */ React.createElement("tbody", null, /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement("th", null, "No"), /* @__PURE__ */ React.createElement("th", null, "Judul Aduan"), /* @__PURE__ */ React.createElement("th", null, "Kategori"), /* @__PURE__ */ React.createElement("th", null, "Status"), /* @__PURE__ */ React.createElement("th", null, "Tanggal"), /* @__PURE__ */ React.createElement("th", null)), rows.map((t, i) => /* @__PURE__ */ React.createElement(BarisAduan, { key: t.id, t, no: i + 1 }))));
+}

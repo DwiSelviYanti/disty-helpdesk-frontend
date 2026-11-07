@@ -1,0 +1,137 @@
+/* Disty HelpDesk - tema gelap */
+
+/* Tema gelap: aktif bila <html data-theme="dark">. Dipilih dari Profil > Pengaturan Akun > Tema.
+   Harus dimuat setelah style.css karena menimpa warna yang di sana ditulis kaku. */
+html[data-theme="dark"]{color-scheme:dark}
+html[data-theme="dark"] :is(.shell,#m,.L,.login,.lf,.ibk,.ddm){--bg:#141518;--card:#1d1e22;--ink:#ececee;--mut:#9ca0a8;--line:#30323a;--pri:#e8743b;--soft:#3a2216;--navy:#101113;--ok:#3ccf8e;--okb:#12301f;--warn:#f0b24a;--warnb:#3a2c0e;--bad:#ff7a73;--badb:#3d1a19;--info:#7aa8ff;--infob:#16254a;--sh:0 14px 34px -18px #000;color-scheme:dark}
+html[data-theme="dark"],html[data-theme="dark"] body{background:#141518!important;background-image:none!important;color:#ececee}
+
+/* kerangka aplikasi */
+html[data-theme="dark"] #app .shell,html[data-theme="dark"] #app .shell .col,html[data-theme="dark"] #app .shell main,html[data-theme="dark"] #app .shell .top{background:#141518;color:#ececee}
+html[data-theme="dark"] #app .shell .hb,html[data-theme="dark"] #app .shell .hbg{background:#1d1e22;border-color:#30323a;color:#ececee}
+html[data-theme="dark"] #app .shell .top .ml .lgp,html[data-theme="dark"] .lgp{background:#fff}
+html[data-theme="dark"] :is(.shell,#m) :is(.hb,.tp,.hp,.alert,.p1,.p2,.p3,.p4,.p5,.p6,.card.kc,.kc,.sk,.qk,.g4>.card.stat){background:#1d1e22!important;border:1px solid #30323a!important}
+html[data-theme="dark"] :is(.shell,#m,.L,.login) .card{background:#1d1e22;border-color:#30323a;box-shadow:0 12px 30px -20px #000}
+html[data-theme="dark"] :is(.shell,#m) .col main>h2,html[data-theme="dark"] :is(.shell,#m) .col main>h2+.sub{background:#1d1e22;border-color:#30323a}
+html[data-theme="dark"] :is(.shell,#m) :is(.cat i,.stat .si,.sk i,.qk i,.ki,.mc i,.sr2 i,.tr2 i,.lb2,.btn.g){background:#2a2c33!important;border:1px solid #3a3d46!important;color:#ececee;box-shadow:none!important}
+html[data-theme="dark"] :is(.shell,#m) .cat[style*="--pri"]{background:#2a2c33!important;border-color:#e8743b!important}
+html[data-theme="dark"] :is(.shell,#m) th{background:#1d1e22;border-color:#30323a;color:#9ca0a8}
+html[data-theme="dark"] :is(.shell,#m) :is(tr.row:hover td,.tr2:hover){background:#25272d}
+html[data-theme="dark"] .tr2:hover{background:#25272d}
+html[data-theme="dark"] :is(.shell,#m) :is(input,select,textarea){background:#16171a;border-color:#3a3d46;color:#ececee}
+html[data-theme="dark"] :is(.shell,#m,.login) ::placeholder{color:#7d8089}
+html[data-theme="dark"] :is(.shell,#m) .tabs{background:#16171a;border:1px solid #30323a}
+html[data-theme="dark"] :is(.shell,#m) .tabs .on{background:#2a2c33;box-shadow:inset 0 0 0 1px #e8743b;color:#fff}
+html[data-theme="dark"] :is(.shell,#m) .chip{background:#1d1e22;border-color:#3a3d46;color:#ececee}
+html[data-theme="dark"] :is(.shell,#m) .chip.on,html[data-theme="dark"] .chip.slt.on{background:#2a2c33;color:#fff;border-color:#e8743b;box-shadow:inset 0 0 0 1px #e8743b}
+html[data-theme="dark"] .chip.slt.full,html[data-theme="dark"] .chip.slt:disabled{background:#202226;border-color:#30323a;color:#6c6f77}
+html[data-theme="dark"] :is(.shell,#m) .btn.o{background:#ffffff08;border-color:#ffffff2b;color:#ececee}
+html[data-theme="dark"] :is(.shell,#m) .btn.o:hover{background:#ffffff14;border-color:#ffffff55}
+html[data-theme="dark"] :is(.shell,#m) :is(.pill.Baru,.pill.PTinggi){background:#2a2c33!important;color:#ececee!important}
+html[data-theme="dark"] :is(.shell,#m) .pill{background:#25272d;color:#ececee;border-color:#3a3d46}
+html[data-theme="dark"] :is(.shell,#m) :is(.k9t,.k9b.a .k9t){background:#25272d;border-color:#30323a;color:#ececee}
+html[data-theme="dark"] .k9e>i{background:#1d1e22}
+html[data-theme="dark"] .lb2:hover{background:#33353d}
+
+/* dropdown kustom, kuota jadwal, popup */
+html[data-theme="dark"] .ddb,html[data-theme="dark"] .ddm,html[data-theme="dark"] .ddi-ic,html[data-theme="dark"] .kq-it,html[data-theme="dark"] .kq-st button{background:#1d1e22;border-color:#3a3d46;color:#ececee}
+html[data-theme="dark"] .ddi:hover,html[data-theme="dark"] .ddi:focus-visible{background:#2a2c33}
+html[data-theme="dark"] .ddi.sel{background:#3a2216;color:#ff9a63}
+html[data-theme="dark"] .kq-it.off{background:#202226}
+html[data-theme="dark"] .kq-it.full{background:#2b2018;border-color:#6b4630}
+html[data-theme="dark"] .kq-st button:hover:not(:disabled){background:#3a2216;border-color:#e8743b;color:#ff9a63}
+html[data-theme="dark"] .ibx{--card:#1d1e22;--ink:#ececee;--line:#30323a;--bg:#16171a;background:#1d1e22;color:#ececee}
+html[data-theme="dark"] .ibx *{color:inherit}
+html[data-theme="dark"] .ibx .ibb{color:#fff}
+html[data-theme="dark"] #app select.sbtn option,html[data-theme="dark"] select option{background:#1d1e22;color:#ececee}
+
+/* laporan bulanan (kertas laporan ikut gelap di layar, tetap putih saat dicetak) */
+html[data-theme="dark"] .lpk,html[data-theme="dark"] .lpr>div{border-color:#30323a}
+html[data-theme="dark"] .lps i{background:#1d1e22;border-color:#30323a;color:#ececee}
+
+/* beranda publik & login */
+html[data-theme="dark"] #app .h6,html[data-theme="dark"] .L .h6{background:#17181b;border-bottom-color:#2a2c33;box-shadow:0 8px 24px -18px #000}
+html[data-theme="dark"] .L,html[data-theme="dark"] .L .hero6,html[data-theme="dark"] html .L .hero6{background:#141518;border-bottom-color:#2a2c33}
+html[data-theme="dark"] .L .sg6>div:hover .ib5,html[data-theme="dark"] .L .sg6>div:active .ib5{background:#2a2c33;border-color:#2a2c33}
+html[data-theme="dark"] .L .hero6 .bdg{background:#2a2c33;border-color:#3a3d46;color:#cfd1d6}
+html[data-theme="dark"] #app .L .chip.on{background:#2a2c33;color:#fff;border-color:#e8743b}
+html[data-theme="dark"] .login,html[data-theme="dark"] .lf{background:#141518;--bg:#141518;--line:#30323a;--soft:#25272d}
+html[data-theme="dark"] #app .lf .tabs{background:#16171a!important;border:1px solid #e8743b!important}
+html[data-theme="dark"] #app .lf .tabs .on{background:#2a2c33!important;color:#ff9a63!important;box-shadow:inset 0 0 0 1.5px #e8743b!important}
+html[data-theme="dark"] #app .lf input,html[data-theme="dark"] #app .lf select{background:#16171a!important;border:1px solid #3a3d46!important;color:#ececee}
+html[data-theme="dark"] .login h1,html[data-theme="dark"] .login h2,html[data-theme="dark"] .login h3,html[data-theme="dark"] .login label{color:#ececee}
+
+/* perbaikan kontras: teks tombol/chip, ikon, lonceng notifikasi */
+html[data-theme="dark"] :is(.shell,#m,.L,.login) :is(.btn.o,.btn.s.o,.chip,.chip.on,.tabs button){color:#ececee!important}
+html[data-theme="dark"] :is(.shell,#m) .chip.on{color:#fff!important}
+html[data-theme="dark"] :is(.shell,#m) :is(.cat i,.stat .si,.sk i,.qk i,.ki,.mc i,.sr2 i,.tr2 i,.lb2){color:#ff9a63!important}
+html[data-theme="dark"] :is(.shell,#m) :is(.cat i,.stat .si,.sk i,.qk i,.ki,.mc i,.sr2 i,.tr2 i) svg{color:#ff9a63;stroke:currentColor}
+html[data-theme="dark"] #app .shell .top :is(.bell,.nb,.bl,button:not(.hbg):not(.btn)){background:#1d1e22!important;border-color:#30323a!important;color:#ececee!important}
+html[data-theme="dark"] .sr2{color:#ececee}
+html[data-theme="dark"] .pa{background:#2a2c33;color:#fff}
+html[data-theme="dark"] :is(.shell,#m,.L,.login) .cat{background:#1d1e22;color:#ececee}
+html[data-theme="dark"] :is(.shell,#m,.L,.login) .cat b{color:#ececee}
+html[data-theme="dark"] :is(.shell,#m,.L,.login) .cat small{color:#9ca0a8}
+
+/* Tema gelap, bagian kedua: menimpa warna kaku (#1f2024 dan #fff dengan !important) di style.css */
+
+/* teks gelap di atas latar gelap: tautan, tombol ikon, judul tips */
+html[data-theme="dark"] :is(.shell,#m) :is(.lk,.qk .go,.bl2,.pfc .btn,.ac,.btn.g,.lb2,.chip.on,tr.row:hover td:last-child svg){color:#ff9a63!important}
+html[data-theme="dark"] :is(.shell,#m) .tp h3,html[data-theme="dark"] .card.tp h3{color:#ff9a63!important}
+html[data-theme="dark"] :is(.shell,#m) .btn.g{background:#3a2216!important;border-color:#6b4630!important}
+html[data-theme="dark"] :is(.shell,#m) .lb2{color:#ff9a63!important}
+
+/* kartu info bergradasi terang (hb, tp) dan label kecil di dalamnya */
+html[data-theme="dark"] :is(.shell,#m) :is(.hb,.tp) :is(h2,h3,b,strong,small,p,span){color:inherit}
+html[data-theme="dark"] :is(.shell,#m) :is(.hb,.tp) p{color:#9ca0a8}
+html[data-theme="dark"] :is(.shell,#m) .hb small{color:#ff9a63}
+
+/* chip beranda publik dan chip bagian di form aduan: latar putih tetap, teks ikut terang */
+html[data-theme="dark"] :is(.shell,#m,.L,.login) :is(.chip,.chip.slt){background:#1d1e22!important;border-color:#3a3d46!important;color:#ececee!important}
+html[data-theme="dark"] :is(.shell,#m,.L,.login) :is(.chip.on,.chip.slt.on){background:#2a2c33!important;border-color:#e8743b!important;color:#fff!important;box-shadow:inset 0 0 0 1px #e8743b!important}
+html[data-theme="dark"] html #app .L .rv .chip:not(.on):hover,html[data-theme="dark"] #app .L .rv .chip:not(.on):hover{background:#3a2216!important;border-color:#e8743b!important;color:#ff9a63!important}
+html[data-theme="dark"] :is(.shell,#m,.L) :is(.chip.slt.full,.chip.slt:disabled){background:#202226!important;border-color:#30323a!important;color:#6c6f77!important}
+
+/* beranda publik: hero, navbar, kartu layanan, FAQ, daftar artikel (list-group Bootstrap) */
+html[data-theme="dark"] #app .L .hero6,html[data-theme="dark"] #app .L .hero6 .bdg{background:#141518!important;border-color:#2a2c33!important}
+html[data-theme="dark"] #app .L .hero6 .bdg{background:#2a2c33!important;color:#cfd1d6!important}
+html[data-theme="dark"] #app .h6{background:#17181b!important;border-bottom-color:#2a2c33!important}
+html[data-theme="dark"] #app .L .sv:hover .ib5,html[data-theme="dark"] #app .L .sv:active .ib5,html[data-theme="dark"] #app .L .sg6>div:hover .ib5{background:#2a2c33!important;border-color:#2a2c33!important;color:#ff9a63!important}
+html[data-theme="dark"] .L :is(.list-group-item,.accordion-item,.accordion-button,.form-control,.input-group-text){background:#1d1e22!important;color:#ececee!important;border-color:#30323a!important}
+html[data-theme="dark"] .L .list-group-item small,html[data-theme="dark"] .L .list-group-item span small{color:#9ca0a8!important}
+html[data-theme="dark"] .L .list-group-item:hover{background:#25272d!important}
+html[data-theme="dark"] .L :is(h1,h2,h3,h4,h5,b,strong,summary){color:#ececee}
+html[data-theme="dark"] .L :is(p,.sub,li){color:#b4b7be}
+html[data-theme="dark"] .L .cta6,html[data-theme="dark"] .L .cta6 :is(h2,p){color:#fff}
+html[data-theme="dark"] .L .btn.lt{background:#fff;color:#7a3510!important}
+
+/* tombol utama: teks putih di atas oranye lebih gelap supaya terbaca */
+html[data-theme="dark"] :is(.shell,#m,.L,.login) .btn:not(.o):not(.g):not(.lt){background:#c9531b;color:#fff}
+html[data-theme="dark"] :is(.shell,#m,.L,.login) .btn:not(.o):not(.g):not(.lt):hover{background:#d9622b}
+html[data-theme="dark"] :is(.shell,#m,.L,.login) .btn:disabled{background:#3a3d46!important;color:#8a8d95!important;box-shadow:none}
+
+/* lencana angka kecil di menu samping */
+html[data-theme="dark"] .sb .nav i,html[data-theme="dark"] .sb .nav .bd{color:#fff}
+
+/* toast */
+html[data-theme="dark"] .toast{background:#2a2c31;color:#ececee;border:1px solid #ffffff22}
+
+/* navbar beranda: logo diberi kotak putih (logo aslinya gelap), menu lebih terang */
+html[data-theme="dark"] #app .h6 .lgp{background:#fff!important;padding:5px 12px!important;border-radius:10px!important}
+html[data-theme="dark"] #app .h6 nav a,html[data-theme="dark"] #app .h6 .nl{color:#c4c7ce!important}
+html[data-theme="dark"] #app .h6 nav a:hover,html[data-theme="dark"] #app .h6 .nl:hover{color:#ff9a63!important}
+html[data-theme="dark"] #app .h6 .nl:hover{background:transparent!important}
+
+/* panah FAQ / dropdown, ikon pencarian */
+html[data-theme="dark"] .L :is(.accordion-button::after,summary::after){filter:invert(1) brightness(1.4)}
+html[data-theme="dark"] .L :is(details,.fq) :is(svg,i){color:#c4c7ce!important;stroke:currentColor}
+html[data-theme="dark"] .L .input-group-text svg{color:#9ca0a8}
+
+/* tombol "Beranda" di halaman login dan tombol outline lain di luar .shell */
+html[data-theme="dark"] :is(.login,.lf,.L) .btn.o{background:#ffffff0a!important;border:1px solid #ffffff2b!important;color:#ececee!important}
+html[data-theme="dark"] :is(.login,.lf,.L) .btn.o:hover{background:#ffffff14!important;border-color:#e8743b!important}
+
+/* Kolom kata sandi dengan tombol mata */
+.pwf{position:relative}.pwf input{padding-right:46px}
+.pwt{position:absolute;top:50%;right:6px;transform:translateY(-50%);width:36px;height:36px;display:grid;place-items:center;border:0;background:none;border-radius:8px;color:var(--mut,#6b7280);cursor:pointer}
+.pwt:hover{color:#c9531b;background:#c9531b14}.pwt:focus-visible{outline:2px solid #c9531b;outline-offset:1px}

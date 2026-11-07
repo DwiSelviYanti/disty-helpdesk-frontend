@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <title>Disty HelpDesk</title>
+  <script>try{var t=localStorage.getItem("disty-helpdesk-tema");document.documentElement.dataset.theme=t=="gelap"||(t=="sistem"&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light"}catch(e){}</script>
+
+  <link id="bsCss" rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dark.css">
+  <link rel="stylesheet" href="css/override.css?v=3">
+</head>
+<body>
+  <div id="app"></div>
+  <div id="m"></div>
+
+  <!-- library -->
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="vendor/react/react.production.min.js"></script>
+  <script src="vendor/react/react-dom.production.min.js"></script>
+
+  <!-- aplikasi -->
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/client.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/technician.js"></script>
+
+  <!-- komponen React -->
+  <script src="js/components/useCountUp.js"></script>
+  <script src="js/components/StatCards.js"></script>
+  <script src="js/components/TabelAduan.js"></script>
+  <script src="js/components/Router.js"></script>
+  <script src="js/components/mount.js"></script>
+  <script src="js/table-fit.js?v=3"></script>
+
+  <!-- API, bahasa, pengaturan -->
+  <script src="js/api.js"></script>
+  <script src="js/mock-api.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
