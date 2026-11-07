@@ -1,76 +1,58 @@
-# Disty HelpDesk — Front-End
+# Disty HelpDesk — Frontend
 
-Bagian **front-end saja** dari proyek Disty HelpDesk (tanpa PHP/Laravel, Node.js, database, dan skrip deploy).
-Seluruh isinya berkas statis (HTML, CSS, JavaScript) sehingga bisa dibuka lewat static server biasa.
+Antarmuka web layanan bantuan teknis PT Disty Teknologi Indonesia untuk tiga peran: **Klien**, **Admin**, dan **Teknisi**. Dibuat dengan HTML, CSS, JavaScript, Bootstrap, Tailwind CSS, dan React. Berupa berkas statis, tidak perlu proses build.
 
-## Struktur
-
-```
-disty-helpdesk-frontend/
-├── index.html          Beranda (landing page)
-├── login.html          Halaman masuk
-├── assets/             Logo dan gambar
-├── css/
-│   ├── style.css       Gaya utama aplikasi
-│   ├── tailwind.css    Utility class bergaya Tailwind (prefix tw-)
-│   ├── dark.css        Tema gelap
-│   └── override.css    Penyesuaian akhir
-├── js/
-│   ├── data.js, utils.js, app.js     Data awal, helper, kerangka aplikasi
-│   ├── client.js / admin.js / technician.js   Tampilan per role
-│   ├── components/     Komponen React (StatCards, TabelAduan, Router, ...)
-│   ├── api.js          Konfigurasi dan klien REST (Fetch API)
-│   ├── mock-api.js     Server tiruan, aplikasi jalan tanpa backend
-│   ├── i18n.js, settings.js, table-fit.js, login.js, main.js
-└── vendor/             Bootstrap dan React (lokal, tanpa CDN)
-```
+![Beranda klien](docs/tangkapan/beranda-klien.png)
 
 ## Menjalankan
 
-Jalankan dari folder ini dengan static server, misalnya:
+Tanpa backend, aplikasi memakai server tiruan (`js/mock-api.js`) sehingga semua alur bisa dicoba:
 
-```bash
-python3 -m http.server 5500
-# lalu buka http://localhost:5500/
-```
+    python3 -m http.server 5500        # atau Live Server di VS Code
+    # buka http://localhost:5500/login.html
 
-Atau pakai ekstensi *Live Server* di VS Code. Di `localhost`, `API_CONFIG.mode` bernilai `auto`:
-bila backend tidak ditemukan, aplikasi memakai `js/mock-api.js` (data disimpan di `localStorage`).
-Font (Google Fonts) dimuat dari internet, bila offline akan memakai font cadangan browser.
+Akun contoh pada mode tiruan: `rina@smkn2.sch.id` (Klien), `admin@perusahaan.id` (Admin), `rafi@perusahaan.id` (Teknisi). Kata sandi apa saja diterima pada mode tiruan.
 
-## Menyambungkan ke backend
+Untuk tersambung ke backend, lihat [docs/API-INTEGRASI.md](docs/API-INTEGRASI.md). Untuk memasang di hosting, lihat [docs/DEPLOY-FRONTEND.md](docs/DEPLOY-FRONTEND.md).
 
-Ubah `API_CONFIG` di `js/api.js`:
+## Struktur
 
-```js
-const API_CONFIG = {
-  mode: 'live',                               // 'auto' | 'live' | 'mock'
-  baseUrl: 'http://localhost:3000/api/v1',    // alamat penuh API backend
-  ...
-};
-```
+    index.html            beranda publik (landing)
+    login.html            halaman masuk dan seluruh aplikasi setelah login
+    css/                  style.css (utama), dark.css (tema gelap), override.css, tailwind.css (hasil build, awalan tw-)
+    js/                   data.js, utils.js, app.js, client.js, admin.js, technician.js, settings.js, i18n.js,
+                          api.js (klien API), mock-api.js (server tiruan), login.js, main.js, table-fit.js
+    js/components/        komponen React: StatCards, TabelAduan, Router, useCountUp, mount
+    vendor/               Bootstrap dan React (berkas lokal, tanpa CDN)
+    assets/               logo dan gambar
+    docs/                 UI/UX, wireframe, integrasi API, pengujian, deploy
 
-Pastikan backend mengizinkan CORS dari alamat front-end ini.
+## Padanan dengan silabus Front-End Web Development
 
-Endpoint yang dipanggil front-end (objek `Api` di `js/api.js`):
+| Modul silabus | Materi | Di mana dikerjakan |
+|---|---|---|
+| 1. Dasar Web Development (120 jam) | HTML dan CSS dasar | `index.html`, `login.html` (struktur semantik, meta viewport, tautan berkas), `css/style.css` (variabel CSS, layout, tipografi, kartu, tabel, formulir) |
+| 2. Version Control (50 jam) | Git dan GitHub | Repositori GitHub proyek ini, `.gitignore`, dan alur kerja pada bagian *Alur Git* di bawah |
+| 3. JavaScript Fundamental (100 jam) | Variabel, fungsi, DOM | `js/data.js` (data dan variabel), `js/utils.js` (fungsi bantu), `js/app.js`, `js/client.js`, `js/admin.js`, `js/technician.js` (membangun dan memperbarui DOM), `js/settings.js` (`localStorage`) |
+| 4. JavaScript Lanjutan (100 jam) | ES6+, event handling, async JS | Arrow function, destructuring, spread, template literal, optional chaining, dan `class ApiError` pada `js/api.js`; event `click`, `keydown`, dan `change` pada `js/utils.js` dan `js/settings.js`, serta `hashchange` dan `pagehide` pada `js/components/Router.js` dan `js/login.js`; `async/await`, `Promise.all`, `Promise.race`, dan `AbortController` pada `js/api.js` dan `js/login.js` |
+| 5. Responsive Design (80 jam) | Media query, grid/flexbox, mobile-first | `css/style.css`: gaya dasar untuk ponsel lalu `@media (min-width: …)` bertahap dari 481 sampai 1101 px; grid dan flexbox; `prefers-color-scheme` dan `prefers-reduced-motion`; wireframe ponsel pada `docs/wireframe/05-ponsel.svg` |
+| 6. Framework CSS (90 jam) | Bootstrap dan Tailwind | Bootstrap (`vendor/bootstrap`): `list-group`, `d-flex`, `btn` pada beranda dan Pusat Bantuan. Tailwind (`css/tailwind.css`, awalan `tw-`): `tw-grid`, `tw-grid-cols-2`, `lg:tw-grid-cols-4`, `tw-text-4xl` pada statistik beranda |
+| 7. UI/UX Design (70 jam) | Wireframe, prototyping, user testing | [docs/UIUX.md](docs/UIUX.md): wireframe 5 layar, prototipe interaktif (mode tiruan), rencana dan formulir pengujian pengguna |
+| 8. Front-End Framework (120 jam) | React dasar: komponen, state, props, routing | `js/components/`: komponen `KotakStat` dan `TabelAduan` dengan props, `useState` dan `useEffect`, hook buatan `useCountUp`, routing berbasis hash pada `Router.js`, dan `mount.js` (`ReactDOM.createRoot`) |
+| 9. API Integration (74 jam) | Fetch API, REST API | `js/api.js`: pembungkus `fetch` (token Bearer, timeout, ulang otomatis untuk GET, galat terstruktur), objek `Api` berisi 29 pemanggil endpoint REST, `Api.muatSemua()` memuat 9 endpoint paralel; `js/mock-api.js` sebagai server tiruan |
+| 10. Project Development (120 jam) | Website lengkap end-to-end | Seluruh aplikasi: tiga peran, dashboard, buat dan pantau aduan, konsultasi, survei, profil, tema gelap, dua bahasa (`js/i18n.js`), dokumen pengujian, dan simulasi deployment |
 
-| Area | Endpoint |
-|---|---|
-| Auth & profil | `POST /auth/login`, `POST /auth/logout`, `GET /auth/me`, `PUT /me`, `PUT /me/password`, `POST /uploads` |
-| Aduan | `GET/POST /tickets`, `PATCH /tickets/:id`, `POST /tickets/:id/assignments`, `POST /tickets/:id/logs`, `PUT /tickets/:id/solution`, `PUT /tickets/:id/rating`, `PUT /tickets/:id/photos` |
-| Konsultasi | `GET/POST /consultations`, `PATCH /consultations/:id`, `PUT /consultations/:id/technician`, `POST /consultations/:id/messages`, `GET/PUT /consultation-quota` |
-| Lainnya | `GET/POST /technicians`, `GET/PUT /surveys/me`, `GET /knowledge-base`, `GET /institutions`, `GET /solutions` |
+## Alur Git
 
-## Kaitan dengan silabus Front-End Web Development
+    git checkout -b fitur/nama-fitur      # cabang baru per fitur
+    git add . && git commit -m "Pesan commit yang jelas"
+    git push -u origin fitur/nama-fitur
+    # buka Pull Request di GitHub, minta tinjauan, lalu Merge ke main
+    git checkout main && git pull
 
-| Modul silabus | Wujud di proyek |
-|---|---|
-| 1. Dasar Web (HTML & CSS) | `index.html`, `login.html`, `css/style.css` |
-| 2. Version Control | `.gitignore`, siap di-`git init` |
-| 3-4. JavaScript Fundamental & Lanjutan | `js/app.js`, `js/utils.js`, `js/client.js`, `js/admin.js`, async/await & Promise di `js/api.js` |
-| 5. Responsive Design | media query dan grid/flexbox di `css/style.css` |
-| 6. Framework CSS | Bootstrap (`vendor/bootstrap`), Tailwind-style (`css/tailwind.css`) |
-| 7. UI/UX | tema terang/gelap (`css/dark.css`), alur per role |
-| 8. Framework Front-End | React (`vendor/react`, `js/components/`) |
-| 9. API Integration | Fetch API & REST di `js/api.js`, server tiruan `js/mock-api.js` |
-| 10. Project Development | seluruh aplikasi Disty HelpDesk |
+## Dokumen
+
+- [docs/UIUX.md](docs/UIUX.md) — wireframe, prototipe, pengujian pengguna
+- [docs/API-INTEGRASI.md](docs/API-INTEGRASI.md) — endpoint dan cara menyambung ke backend
+- [docs/PENGUJIAN.md](docs/PENGUJIAN.md) — skenario pengujian manual dan debugging
+- [docs/DEPLOY-FRONTEND.md](docs/DEPLOY-FRONTEND.md) — memasang di hosting
