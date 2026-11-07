@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" font-family="Arial,sans-serif" font-size="13">
+<rect width="960" height="640" fill="#fff"/>
+<text x="12" y="22" font-size="15" font-weight="bold" fill="#444">Wireframe: Halaman Masuk (login.html)</text>
+<g transform="translate(0,34)"><rect x="4" y="2" width="952" height="596" fill="#fafafa" stroke="#888"/>
+<rect x="8" y="8" width="470" height="580" rx="4" fill="#e6e6e6" stroke="#777"/>
+<rect x="40" y="40" width="300" height="40" rx="4" fill="#fff" stroke="#777"/>
+<text x="190.0" y="64.0" text-anchor="middle" fill="#444">Logo Disty</text>
+<text x="40" y="250" font-size="22" fill="#444" font-weight="bold">Judul slogan</text>
+<rect x="40" y="270" width="340.0" height="7" rx="3" fill="#d9d9d9"/>
+<rect x="40" y="284" width="221.0" height="7" rx="3" fill="#d9d9d9"/>
+<rect x="40" y="340" width="300" height="28" rx="4" fill="#fff" stroke="#777"/>
+<text x="190.0" y="358.0" text-anchor="middle" fill="#444">Poin keunggulan 1</text>
+<rect x="40" y="380" width="300" height="28" rx="4" fill="#fff" stroke="#777"/>
+<text x="190.0" y="398.0" text-anchor="middle" fill="#444">Poin keunggulan 2</text>
+<rect x="40" y="420" width="300" height="28" rx="4" fill="#fff" stroke="#777"/>
+<text x="190.0" y="438.0" text-anchor="middle" fill="#444">Poin keunggulan 3</text>
+<rect x="540" y="130" width="380" height="340" rx="4" fill="#fff" stroke="#777"/>
+<rect x="560" y="150" width="150" height="30" rx="4" fill="#fff" stroke="#777"/>
+<text x="635.0" y="169.0" text-anchor="middle" fill="#444">Logo</text>
+<rect x="840" y="150" width="64" height="30" rx="4" fill="#fff" stroke="#777"/>
+<text x="872.0" y="169.0" text-anchor="middle" fill="#444">Beranda</text>
+<text x="560" y="225" font-size="20" fill="#444" font-weight="bold">Masuk</text>
+<text x="560" y="260" font-size="13" fill="#444">Email</text>
+<rect x="560" y="268" width="340" height="38" rx="4" fill="#fff" stroke="#777" stroke-dasharray="5 4"/>
+<text x="730.0" y="291.0" text-anchor="middle" fill="#444">email@email.com</text>
+<text x="560" y="335" font-size="13" fill="#444">Kata sandi</text>
+<rect x="560" y="343" width="340" height="38" rx="4" fill="#fff" stroke="#777" stroke-dasharray="5 4"/>
+<text x="730.0" y="366.0" text-anchor="middle" fill="#444">••••••••  (ikon mata)</text>
+<rect x="560" y="405" width="340" height="40" rx="4" fill="#bbb" stroke="#777"/>
+<text x="730.0" y="429.0" text-anchor="middle" fill="#444" font-weight="bold">Masuk</text></g></svg>
